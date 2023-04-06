@@ -23,7 +23,20 @@ public class StudentsController {
         return studentsService.getAllStudents();
     }
 
+    @PostMapping
+    public void addNewBankStudent(@RequestBody Students students) {
+        studentsService.addNewStudent(students);
+    }
 
+    @DeleteMapping("/{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+        studentsService.deleteStudent(studentId);
+    }
 
+    @PutMapping("/{studentId}")
+    public void editStudentById(@RequestBody Students students, @PathVariable("studentId") Long studentId){
+        studentsService.editStudentById(students, studentId);
+
+    }
 
 }
