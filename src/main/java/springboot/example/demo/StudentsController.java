@@ -24,7 +24,7 @@ public class StudentsController {
     }
 
     @PostMapping
-    public void addNewBankStudent(@RequestBody Students students) {
+    public void addNewStudent(@RequestBody Students students) {
         studentsService.addNewStudent(students);
     }
 
